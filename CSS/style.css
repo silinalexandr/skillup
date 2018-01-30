@@ -1,0 +1,28 @@
+h4 {
+			    color: #004affba;
+			    margin: 16px 4px;
+			    border: 1px solid #000000;
+			    padding: 16px 4px;
+			    width: 130px;
+			    text-align: center;
+			    background-color: #f30606;
+			    border-radius: 6px;
+			    font-size: 25px;
+			    font-weight: normal;
+
+		}
+		label {
+			margin: 21px o o o;
+			display: block;
+		}
+		
+		/*#block_firstname {
+			padding: 5px;
+			background-color: grey;
+		}*/
+		.form-group input  {
+			background-color: grey;
+			color:#fff;
+		}
+
+		}
