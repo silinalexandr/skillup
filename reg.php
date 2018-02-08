@@ -1,34 +1,73 @@
 <?php
 
+function getFullName($user) {
+    return $user['firstname'] . ' ' . $user['lastname'];
+}
+
 //var_dump($_POST);
+
+// unset($_POST['is_agree']);
+// var_dump($_POST);
+
+$error_message = [];
+
+$user = [
+    'firstname' => null,
+    'lastname' => null,
+    'password' => null,
+    'sex' => null,
+    'age' => null,
+    'growth' => null,
+    'list_fruit' => 'яблоко', 'апельсин', 'груша',
+
+];
+
 
 if ( isset($_POST['is_agree']) ) {
     $user = [
-        'name' => $_POST['firstname'],
+        'firstname' => $_POST['firstname'],
         'lastname' => $_POST['lastname'],
         'password' => $_POST['password'],
         'sex' => $_POST['sex'],
         'age' => (int)$_POST['age'],
         'growth' => $_POST['growth'],
+        'list_fruit' => 'яблоко', 'апельсин', 'груша',
         //'stack_learn' => $_POST['stack_learn'],
     ];
     if (isset($_POST['stack_learn'])) {
         $user['stack_learn'] = $_POST['stack_learn'];
     }
 
-    var_dump($user);
+var_dump(getFullName($user));
 
-    if ($user['age'] > 18 ) {
+//    var_dump($user);
+//    var_dump(array_keys($user));
+//    die();
+
+    if ($user['age'] > 18) {
         echo 'Этот пользователь достаточно взрослый';
-    } elseif ($user['age'] == 18 ) {
+    } elseif ($user['age'] == 18) {
         echo 'Этому пользователю 18 лет';
     } else {
         echo 'Этот пользователь НЕ достаточно хорош';
     }
-
-
-
 }
+
+
+
+    If (strlen($user['firstname']) < 3 || strlen($user['lastname']) < 3 ) {
+        $errorMessage[] = 'Имя и Фамилия не должны быть короче 3х символов';
+    }
+
+    If ( !(in_array( 'html', $user['stack_learn']) && in_array('php', $user['stack_learn'])) ) {
+        $errorMessage[] = 'Требуется html и php' ;
+    }
+
+
+//    $string = 'Hello world';
+//    $result = substr($string, 0, 5);
+//    var_dump($result);
+//    die();
 
 
 ?>
@@ -44,6 +83,16 @@ if ( isset($_POST['is_agree']) ) {
 </head>
 <body>
 
+
+<?php if ($error_message) { ?>
+    <?php foreach ($errorMessage as $message) { ?>
+    <div class="alert alert-danger" role="alert">
+        Ошибка
+    </div>
+    <?php } ?>
+<?php } ?>
+
+
 <?php if (isset($user['stack_learn'])) { ?>
 <h3>Мы изучаем</h3>
 
@@ -54,13 +103,27 @@ if ( isset($_POST['is_agree']) ) {
         <?php } ?>
 
     </ul>
+    <h3>Мы изучаем: <?= implode(',' , $user['stack_learn']) ?> </h3>
+
+    <h3>Наши фрукты</h3>
+    <ul>
+        <?php foreach (explode(',', $user['list_fruit']) as $key => $fruit) { ?>
+
+            <li><?= $fruit ?></li>
+        <?php } ?>
+
+    </ul>
+
 <?php } ?>
+
+
 
 <div class="container-fluid jumbotron col-md-offset-4 col-md-5">
     <form action="" method="POST">
         <div class="form-group">
             <label for="firstname">Имя</label>
             <input class="form-control" id="firstname" name="firstname" placeholder="Имя" required>
+                // value=
         </div>
         <div class="form-group">
             <label for="lastname">Фамилия</label>
