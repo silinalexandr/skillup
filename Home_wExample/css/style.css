@@ -1,0 +1,111 @@
+
+
+.container { 
+	overflow: hidden;
+}
+
+.header .logo img {
+ 	width: 70px;
+}
+
+.logo {
+	float: left;
+	margin: 2px;
+}
+.ava img {
+	width: 40px;
+	float: right;
+	margin: 19px 4px 26px 6px;
+}
+
+.menu {
+	float: right;
+	margin: 3px 0 0 0;
+}
+.header .menu li {
+	float: right;
+	list-style-type: none;
+	margin:0 5px 0 0;
+	font-size: 15px;
+}
+
+.menu a {
+	color: #2196f3;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;	
+}
+.menu a:hover {
+	color: #03a9f4;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;	
+}
+
+.search {
+    float: right;
+    margin: 22px;
+}
+.search input {
+	border-color: #2196f3;
+	border-style: solid;
+	border-radius: 8px;
+}
+.inp {
+	background: #2196f3;
+	color: white;
+	font-size: 12px;
+	border-radius: 8px;
+
+}
+
+.menu ul {
+	margin: 10px 0 0 0; 
+	padding-top: 10px;
+} 
+
+.user {
+	margin: 42px -114px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	font-family: Arial, serif;
+	color: grey;
+}
+
+
+.title h1 {
+	font-size: 17px;
+	text-align: left;
+	margin: 0 20px -42px 1px;
+	font-style: normal;
+	font-weight: normal;
+	font-family: Arial, serif;
+}
+
+.head_posts {text-align: center;width: 300px;margin: 106px auto 0 auto;background-color: red;}
+
+.post_img img {width: 300px;margin: -35px 0 0 1px;}
+
+.like img {
+	width: 20px;
+}
+.like a {
+	
+	float: left;
+}
+
+.comments  {
+	padding: 3px 1px;
+}	
+
+
+.comments a {
+float: right;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	font-family: Arial, serif;
+	color: grey;
+	text-decoration: none;
+	border-bottom: 1px dashed #808080;
+
+}
